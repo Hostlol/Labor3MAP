@@ -63,7 +63,7 @@ private List<Genre> genres = new ArrayList<>();
 
     public void addEvents(Events event) {
         events.add(event);
-        event.addBook(this);
+        //event.addBook(this);
     }
 
 }

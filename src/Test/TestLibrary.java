@@ -1,9 +1,7 @@
 package Test;
 
-import Domain.Book;
-import Domain.Customer;
-import Domain.Librarian;
-import Domain.Library;
+import Domain.*;
+import Patterns.EventsFactory;
 import Patterns.LibraryObserver;
 import Patterns.LibraryPolicy;
 import org.junit.jupiter.api.BeforeEach;
@@ -65,6 +63,22 @@ public class TestLibrary {
         System.out.println("Books in the library:");
         for (Book book : books) {
             System.out.println(book.getTitle());
+        }
+    }
+    public static void testFactory() {
+        // Create a book event
+        Events bookEvent = EventsFactory.createEvent("Book", "BookEvent");
+        System.out.println("Created event type: " + bookEvent.getName());
+
+        // Create another type of event
+        Events otherEvent = EventsFactory.createEvent("Other", "OtherEvent");
+        System.out.println("Created event type: " + otherEvent.getName());
+
+        // Try to create an unsupported event type
+        try {
+            Events unsupportedEvent = EventsFactory.createEvent("Unsupported", "UnsupportedEvent");
+        } catch (IllegalArgumentException e) {
+            System.out.println("Error: " + e.getMessage());
         }
     }
 }
