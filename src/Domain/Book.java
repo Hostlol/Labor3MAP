@@ -60,6 +60,7 @@ private List<Genre> genres = new ArrayList<>();
         genre.addBook(this);
     }
 
+
     public void addEvents(Events event) {
         events.add(event);
         event.addBook(this);
