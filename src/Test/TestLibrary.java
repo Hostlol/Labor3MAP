@@ -5,6 +5,7 @@ import Patterns.EventsFactory;
 import Patterns.LibraryObserver;
 import Patterns.LibraryPolicy;
 import Patterns.SimpleLibraryPolicy;
+import org.junit.Assert;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -26,6 +27,7 @@ public class TestLibrary {
         String name2 = librarian2.getName();
         System.out.println("Librarian Name: " + name);
         System.out.println("Librarian Name: " + name2);
+        Assert.assertEquals(librarian.getName(), librarian2.getName());
     }
 
     public static void testLibrary() {
@@ -54,9 +56,6 @@ public class TestLibrary {
 
         // Add a customer to the library
         library.addCustomer(new Customer("TestCustomer"));
-
-        // Test borrowing a book
-        //library.borrowBook(new Customer("TestCustomer"), new Book("TestBook", 11));
 
         // Get the list of books in the library
         List<Book> books = library.getBooks();
