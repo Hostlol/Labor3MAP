@@ -4,6 +4,7 @@ import Domain.*;
 import Patterns.EventsFactory;
 import Patterns.LibraryObserver;
 import Patterns.LibraryPolicy;
+import Patterns.SimpleLibraryPolicy;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -26,6 +27,7 @@ public class TestLibrary {
         System.out.println("Librarian Name: " + name);
         System.out.println("Librarian Name: " + name2);
     }
+
     public static void testLibrary() {
         // Create a Library instance
         Librarian librarian = Librarian.getInstance("John Doe");
@@ -65,6 +67,7 @@ public class TestLibrary {
             System.out.println(book.getTitle());
         }
     }
+
     public static void testFactory() {
         // Create a book event
         Events bookEvent = EventsFactory.createEvent("Book", "BookEvent");
@@ -81,4 +84,21 @@ public class TestLibrary {
             System.out.println("Error: " + e.getMessage());
         }
     }
-}
+    public static void LibraryTest(){
+            // Create instances for testing
+            Customer customer = new Customer("John Cena");
+            Book book = new Book();
+            book.setTitle("Test Title");
+
+            // Create a test library policy
+            SimpleLibraryPolicy testLibraryPolicy = new SimpleLibraryPolicy();
+
+            // Create a Library instance with the test library policy
+            Librarian librarian = Librarian.getInstance("test");
+            Library library = new Library(librarian);
+            library.setLibraryPolicy(testLibraryPolicy);
+
+            // Call the borrowBook method
+            library.borrowBook(customer, book);
+        }
+    }

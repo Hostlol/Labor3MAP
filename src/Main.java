@@ -1,3 +1,4 @@
+import Test.TestLibrary;
 import UI.PersistentConsoleUI;
 
 import static Test.TestLibrary.*;
@@ -8,6 +9,7 @@ public class Main {
         testLibrarian();
         testLibrary();
         testFactory();
+        LibraryTest();
     }
 
 }
