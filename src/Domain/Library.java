@@ -12,9 +12,10 @@ public class Library {
     private Librarian librarian;
     private LibraryPolicy libraryPolicy;
 
-    public Library(Librarian librarian, LibraryPolicy libraryPolicy) {
+    private static Library instance;
+
+    public Library(Librarian librarian) {
         this.librarian = librarian;
-        this.libraryPolicy = libraryPolicy;
     }
 
     public void setLibraryPolicy(LibraryPolicy libraryPolicy) {
