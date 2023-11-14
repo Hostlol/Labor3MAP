@@ -1,19 +1,22 @@
+package Domain;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Genre {
-    private String name;
+public class Events {
+    public String name;
+
     private List<Book> books = new ArrayList<>();
 
-    public Genre(String name) {
+    public Events(String name) {
         this.name = name;
     }
 
 
     public void addBook(Book book) {
         books.add(book);
-        //book.addGenre(this);
-
-
+        //book.addEvents(this);
     }
+
+
 }

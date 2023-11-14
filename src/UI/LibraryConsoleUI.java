@@ -1,3 +1,12 @@
+package UI;
+
+import Controller.AuthorController;
+import Controller.BookController;
+import Domain.Author;
+import Domain.Book;
+import Repo.AuthorRepository;
+import Repo.BookRepository;
+
 import java.util.Scanner;
 
 public class LibraryConsoleUI {
@@ -9,10 +18,10 @@ public class LibraryConsoleUI {
         BookController bookController = new BookController(bookRepo);
 
         while (true) {
-            System.out.println("Library Management System");
-            System.out.println("1. Add Author");
-            System.out.println("2. Add Book");
-            System.out.println("3. List Books by Author");
+            System.out.println("Domain.Library Management System");
+            System.out.println("1. Add Domain.Author");
+            System.out.println("2. Add Domain.Book");
+            System.out.println("3. List Books by Domain.Author");
             System.out.println("4. Exit");
             System.out.print("Select an option: ");
 
@@ -39,9 +48,9 @@ public class LibraryConsoleUI {
                     if (author1 != null) {
                         author1.writeBook(book);
                         bookController.addBook(book);
-                        System.out.println("Book added successfully.");
+                        System.out.println("Domain.Book added successfully.");
                     } else {
-                        System.out.println("Author not found.");
+                        System.out.println("Domain.Author not found.");
                     }
                     break;
 
@@ -58,12 +67,12 @@ public class LibraryConsoleUI {
                             }
                         }
                     } else {
-                        System.out.println("Author not found.");
+                        System.out.println("Domain.Author not found.");
                     }
                     break;
 
                 case 4:
-                    System.out.println("Exiting the Library Management System.");
+                    System.out.println("Exiting the Domain.Library Management System.");
                     System.exit(0);
                     break;
 

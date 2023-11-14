@@ -1,9 +1,13 @@
+package Repo;
+
+import Domain.Book;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class BookRepository {
-    List<Book> books = new ArrayList<>();
-    int bookIdCounter = 1;
+    public List<Book> books = new ArrayList<>();
+    public int bookIdCounter = 1;
 
     public void addBook(Book book) {
         book.setBookId(bookIdCounter);

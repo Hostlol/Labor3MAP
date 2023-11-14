@@ -1,3 +1,8 @@
+package Domain;
+
+import Patterns.LibraryObserver;
+import Patterns.LibraryPolicy;
+
 import java.util.ArrayList;
 import java.util.List;
 

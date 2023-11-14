@@ -1,3 +1,5 @@
+package Domain;
+
 public class Author implements Person {
     public void setName(String name) {
         this.name = name;
@@ -7,7 +9,7 @@ public class Author implements Person {
 
     @Override
     public String toString() {
-        return "Author{" +
+        return "Domain.Author{" +
                 "name='" + name + '\'' +
                 ", AuthorId=" + AuthorId +
                 '}';

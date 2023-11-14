@@ -1,5 +1,6 @@
+package Domain;
+
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 public class Book {
@@ -7,7 +8,7 @@ public class Book {
 
     @Override
     public String toString() {
-        return "Book{" +
+        return "Domain.Book{" +
                 "title='" + title + '\'' +
                 ", authors=" + authors +
                 ", BookId=" + BookId +
