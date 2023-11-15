@@ -54,4 +54,28 @@ public class Library {
             observer.update(this);
         }
     }
+    public void printAllCustomers() {
+        System.out.println("All Customers:");
+
+        for (Customer customer : customers) {
+            System.out.println(customer.toString());
+        }
+
+    }
+    public Book findBookByName(String bookNameForEvent) {
+        for (Book book : books) {
+            if (book.getTitle().equalsIgnoreCase(bookNameForEvent)) {
+                return book;
+            }
+        }
+        return null; // Book not found
+    }
+    public Customer getCustomerById(int customerId) {
+        for (Customer customer : customers) {
+            if (customer.getId() == customerId) {
+                return customer;
+            }
+        }
+        return null; // Customer not found
+    }
 }

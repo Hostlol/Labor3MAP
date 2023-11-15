@@ -46,4 +46,12 @@ public class BookRepository {
             books.remove(bookToRemove);
         }
     }
+    public Book getBookById(int bookId) {
+        for (Book book : books) {
+            if (book.getBookId() == bookId) {
+                return book;
+            }
+        }
+        return null; // Return null if the book with the given ID is not found
+    }
 }

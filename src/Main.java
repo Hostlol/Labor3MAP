@@ -5,12 +5,11 @@ import static Test.TestLibrary.*;
 
 public class Main {
     public static void main(String[] args) {
-        //PersistentConsoleUI.startConsole();
-        testLibrarian();
-        testLibrary();
-        testFactory();
-        LibraryTest();
-        //testign
+        PersistentConsoleUI.startConsole();
+//        testLibrarian();
+//        testLibrary();
+//        testFactory();
+//        LibraryTest();
     }
 
 }

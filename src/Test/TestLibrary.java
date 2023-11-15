@@ -55,7 +55,7 @@ public class TestLibrary {
         library.addBook(book2);
 
         // Add a customer to the library
-        library.addCustomer(new Customer("TestCustomer"));
+//        library.addCustomer(new Customer("TestCustomer"));
 
         // Get the list of books in the library
         List<Book> books = library.getBooks();
@@ -85,7 +85,7 @@ public class TestLibrary {
     }
     public static void LibraryTest(){
             // Create instances for testing
-            Customer customer = new Customer("John Cena");
+            Customer customer = new Customer("John Cena",1);
             Book book = new Book();
             book.setTitle("Test Title");
 

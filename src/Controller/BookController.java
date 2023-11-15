@@ -32,4 +32,7 @@ public class BookController {
     public void removeBook(int bookId){
         bookRepository.removeBook(bookId);
     }
+    public Book getBookById(int bookId) {
+        return bookRepository.getBookById(bookId);
+    }
 }
