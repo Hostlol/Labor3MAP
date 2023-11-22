@@ -5,6 +5,7 @@ import Controller.BookController;
 import Domain.*;
 import Patterns.EventsFactory;
 import Patterns.LibraryObserver;
+import Patterns.MoreSimpleLibraryPolicy;
 import Patterns.SimpleLibraryPolicy;
 import Repo.AuthorRepository;
 import Repo.BookRepository;
@@ -63,6 +64,7 @@ public class PersistentConsoleUI {
         library.addObserver(customer3);
         SimpleLibraryPolicy testLibraryPolicy = new SimpleLibraryPolicy();
         library.setLibraryPolicy(testLibraryPolicy);
+        MoreSimpleLibraryPolicy moreLibraryPolicy = new MoreSimpleLibraryPolicy();
         // Display a welcome message
         System.out.println("Welcome to the Library");
 
@@ -78,7 +80,8 @@ public class PersistentConsoleUI {
             System.out.println("7. Tests");
             System.out.println("8. Borrow Book");
             System.out.println("9. Create Event");
-            System.out.println("10. Quit");
+            System.out.println("10. Choose borrow type");
+            System.out.println("11. Quit");
 
             // Prompt the user to select an option
             System.out.print("Enter the option number: ");
@@ -179,6 +182,33 @@ public class PersistentConsoleUI {
                     }
                     break;
                 case 10:
+                    System.out.println("Select an option:");
+                    System.out.println("1. Borrow type 1");
+                    System.out.println("2. Borrow type 2");
+                    System.out.println("3. Quit");
+
+                    System.out.print("Enter the option number: ");
+                    int subOption = scanner.nextInt();
+                    scanner.nextLine(); // Consume the newline character
+
+                    switch (subOption) {
+                        case 1:
+                            library.setLibraryPolicy(testLibraryPolicy);
+                            System.out.println("policy 1");
+                            break;
+                        case 2:
+                            library.setLibraryPolicy(moreLibraryPolicy);
+                            System.out.println("policy 2");
+                            break;
+                        case 3:
+                            System.out.println("Goodbye!");
+                            isRunning = false; // Exit the loop
+                            break;
+                        default:
+                            System.out.println("Invalid sub-option. Please select a valid sub-option.");
+                    }
+                    break;
+                case 11:
                     System.out.println("Goodbye!");
                     isRunning = false; // Exit the loop
                     break;
