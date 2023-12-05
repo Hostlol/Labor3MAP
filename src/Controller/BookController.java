@@ -3,6 +3,7 @@ package Controller;
 import Domain.Book;
 import Repo.BookRepository;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public class BookController {
@@ -12,27 +13,15 @@ public class BookController {
         this.bookRepository = bookRepository;
     }
 
-    public void addBook(Book book) {
-        book.setBookId(bookRepository.bookIdCounter);
-        bookRepository.books.add(book);
-        bookRepository.bookIdCounter++;
+    public void addBook(Book book) throws SQLException {
+        bookRepository.addBook(book);
+    }
+    public void printAllBooks() throws SQLException {
+        bookRepository.viewBooks();
     }
 
-    public void printAllBooks() {
-        bookRepository.printAllBooks();
-    }
-    public Book findBookByTitle(String title) {
-        return bookRepository.findBookByTitle(title);
+    public void removeBook(int bookId) throws SQLException {
+        bookRepository.deleteBook(bookId);
     }
 
-    public List<Book> getAllBooks() {
-        return bookRepository.getAllBooks();
-    }
-
-    public void removeBook(int bookId){
-        bookRepository.removeBook(bookId);
-    }
-    public Book getBookById(int bookId) {
-        return bookRepository.getBookById(bookId);
-    }
 }

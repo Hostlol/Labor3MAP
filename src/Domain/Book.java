@@ -6,18 +6,36 @@ import java.util.List;
 public class Book {
     private String title;
 
+    public Book(int bookId, String name, int author, int library) {
+        this.BookId = bookId;
+        this.title = name;
+        this.AuthorId = author;
+        this.LibraryId = library;
+    }
+
     @Override
     public String toString() {
-        return "Domain.Book{" +
-                "title='" + title + '\'' +
-                ", authors=" + authors +
+        return
+                "Title='" + title + '\'' +
                 ", BookId=" + BookId +
-                '}';
+                ", LibraryId=" + LibraryId +
+                ", AuthorId=" + AuthorId ;
     }
 
     private List<Author> authors = new ArrayList<>();
 
     private int BookId;
+    private int LibraryId;
+
+    public int getAuthorId() {
+        return AuthorId;
+    }
+
+    public void setAuthorId(int authorId) {
+        AuthorId = authorId;
+    }
+
+    private int AuthorId;
 
     public int getBookId() {
         return BookId;

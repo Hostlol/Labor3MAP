@@ -44,7 +44,7 @@ public class AuthorRepository {
     }
 
     public void deleteAuthor(int authorId) throws SQLException {
-        String query = "DELETE FROM Author WHERE authorId = ?";
+        String query = "DELETE FROM Author WHERE IdAuthor = ?";
         try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
             preparedStatement.setInt(1, authorId);
             int affectedRows = preparedStatement.executeUpdate();
@@ -76,6 +76,25 @@ public class AuthorRepository {
             e.printStackTrace();
         }
     }
+    public Author getAuthorById(int AuthorId) throws SQLException {
+        String query = "SELECT * FROM Author WHERE IdAuthor = ?";
+        //Author author = null;
 
+        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            preparedStatement.setInt(1, AuthorId);
+
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                if (resultSet.next()) {
+                    int id = resultSet.getInt("IdAuthor");
+                    String name = resultSet.getString("name");
+
+                    Author author = new Author(AuthorId, name);
+                    return author;
+                }
+            }
+        }
+
+        return null;
+    }
 }
 
