@@ -21,7 +21,8 @@ public class Author implements Person {
         return AuthorId;
     }
 
-    public Author(String name){
+    public Author(int IdAuthor, String name){
+        this.AuthorId = IdAuthor;
         this.name = name;
     }
 
